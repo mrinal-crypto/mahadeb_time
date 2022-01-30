@@ -41,9 +41,9 @@ void setup()
     
 
       
-//rtc.setDOW(FRIDAY);///set day by uncomment
-//rtc.setTime(23,03,10);///set time
-//rtc.setDate(28,1,2022); //set date
+//rtc.setDOW(SATURDAY);///set day by uncomment
+//rtc.setTime(19,16,30);///set time
+//rtc.setDate(29,1,2022); //set date
 
 }
 
@@ -62,7 +62,7 @@ void loop()
     autoSpeaker();
     autoPump();
     Signal();
-    serial();  
+    //serial();  
   }
   if(Year == 2000)
   {
@@ -81,7 +81,7 @@ void loop()
 
 void autoSpeaker()
 {
-  if(workTime>=270 && workTime<720 || workTime>=900 && workTime<1380)
+  if(workTime>=300 && workTime<360 || workTime>=1080 && workTime<1140) //5->6, 18->19
   {
     digitalWrite(speaker, HIGH);
   }
@@ -93,7 +93,7 @@ void autoSpeaker()
 /////////////////////////////////////////////////
 void autoPump()
 {
-  if(workTime>=300 && workTime<480 || workTime>=900 && workTime<960)
+  if(workTime>=420 && workTime<435 || workTime>=720 && workTime<750 || workTime>=1200 && workTime<1215) //7->7.15, 12->12.30, 20->20.15
   {
     digitalWrite(pump, HIGH);
   }
